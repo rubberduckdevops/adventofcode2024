@@ -17,10 +17,12 @@ public class App {
         System.out.println(new App().getGreeting());
         Map<String, ArrayList<String>> inputData = FileInput.main();
 
-        System.out.println(inputData.get("left"));
-        System.out.println(inputData.get("right"));
         Integer totalDistance = PointDistance.main(inputData.get("left"), inputData.get("right"));
         System.out.println("Total Distance Calculated!");
         System.out.println("It is! " + totalDistance);
+
+        System.out.println("---------- Part 2 ----------");
+        Integer finalScore = SimilarityScore.checkScore(inputData.get("left"), inputData.get("right"));
+        System.out.println("Similarity Score: " + finalScore);
     }
 }
